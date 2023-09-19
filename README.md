@@ -50,7 +50,7 @@ This project targets a broad audience which includes researchers within the fiel
 
 The flow chart below shows the preprocessing and machine learning techniques used to create this multiclass CNN. 
 
-<img src="graphics/model_workflow.png" alt="Alt text" width="800" height="400">
+<img src="graphics/model_workflow.png" alt="Alt text" width="300" height="200">
 
 # [Data Dictionary](#section-title)
 
