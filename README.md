@@ -20,41 +20,41 @@ September 20, 2023 <br>
 Speech emotion recognition (SER) is the process of predicting human emotions from audio signals using artificial intelligence (AI) and machine learning (ML) techniques. Human speech contains several features that a listener interprets to unpack the information transmitted by the speaker, such as tone, pitch, speed, and other acoustic properties. 
 
 To classify speech based on emotion, audio data is first transformed to spectograms. A spectogram is the visual representation of the spectrum of frequencies of a signal as it varies with time. Spectograms are generated using the following steps:
-1. The audio data is divided into short, overlapping time segments (typically 20-30 ms). Each frame is transformed into a spectogram seperately.
-2. The Short-Term Fourier Transform (STFT) was used for this project and is the most common method to create a spectogram. The STFT is a mathematical technique used to decomose a complex signal into its constituent sinusoidal components, revealing the frequency and phase information of those components. Spectograms build upon the STFT concept by providing a time-varying representation of frequency compoennts. Applying the STFT to small segments of audio signals generates a spectogram display with time on the horizontal axis, frequency on the vertical, and the intensity of the color within the plot representing the magnitude ofthe strength (energy) of each frequency at a given time.
+1. The audio data is divided into short, overlapping time segments (typically 20-30 ms). Each frame is transformed into a spectogram separately.
+2. The Short-Term Fourier Transform (STFT) was used for this project and is the most common method to create a spectogram. The STFT is a mathematical technique used to decompose a complex signal into its constituent sinusoidal components, revealing the frequency and phase information of those components. Spectograms build upon the STFT concept by providing a time-varying representation of frequency components. Applying the STFT to small segments of audio signals generates a spectogram display with time on the horizontal axis, frequency on the vertical, and the intensity of the color within the plot representing the magnitude of the strength (energy) of each frequency at a given time.
 5. These spectograms are plotted and are used as image inputs to a Convolutional Neural Net (CNN).
 
-CNN's are a deep learning model specifically designed to process audio data for tasks relating to speech recognition, music classification, and sound event detection. CNNs use convolutional layers to scan input data for local patterns at varying scales and locations, such as the spectral features within the spectogram plot. Pooling layers are then used to downsample the spatial dimensions of the feature maps produced by the convolutional layers, thereby reducing the number of paramters within the model. The next layer flattens the model to spatially reduce the feaure map into a 1-Dimensional vector. The flattened feature vector is then passed through one or more fully connected layers to learn complex combinations of these features. Lastly, an output later is passed through an activation function (softmax for multiclass classifcation problems such as this one) to obtain class probabilities. One particular CNN model used within this project is VGG16, a Visual Geometry Group consisting of 16 convolutional layers with a preestablished architecture. The VGG architecture is the basis of ground-breaking object recognition models and surpases baselines on many tasks beyond its original Imagenet training data
+CNN's are a deep learning model specifically designed to process audio data for tasks relating to speech recognition, music classification, and sound event detection. CNNs use convolutional layers to scan input data for local patterns at varying scales and locations, such as the spectral features within the spectogram plot. Pooling layers are then used to downsample the spatial dimensions of the feature maps produced by the convolutional layers, thereby reducing the number of parameters within the model. The next layer flattens the model to spatially reduce the feature map into a 1-Dimensional vector. The flattened feature vector is then passed through one or more fully connected layers to learn complex combinations of these features. Lastly, an output later is passed through an activation function (Softmax for multiclass classification problems such as this one) to obtain class probabilities. One particular CNN model used within this project is VGG16, a Visual Geometry Group consisting of 16 convolutional layers with a pre-established architecture. The VGG architecture is the basis of ground-breaking object recognition models and surpasses baselines on many tasks beyond its original Imagenet training data
    
 There are a wide range of applications which broadly include speech recognition, music classification, and audio event detection. This can be applied across various domains to extract emotional information from spoken language. Some key applications include:
 1. Human-Computer Interaction (HCI): to enhance interaction between humans and machines (such as Siri or Alexa).
 2. Market Research: to analyze consumers' emotional responses from interviews or focus groups.
-3. Financial: to understand the emotions and sentiments of market participants, such as from arning calls and financial news broadcasts, which influences stock prices.
-4. Fraud Detection: to detect anomolies in speech patterns which may indicate frauduelent activities. 
+3. Financial: to understand the emotions and sentiments of market participants, such as from earning calls and financial news broadcasts, which influences stock prices.
+4. Fraud Detection: to detect anomalies in speech patterns which may indicate fraudulent activities. 
 
 
 # [Problem Statement](#section-title)
-I am tasked with developing an emotion classification system using the CREMA-D Audio Dataset. The objective is to build a machine learning model that can accurately classify audio recordngs into six distinct emotional categories: Anger, Disgust, Fear, Happiness, Netural, and Sadness. 
+I am tasked with developing an emotion classification system using the CREMA-D Audio Dataset. The objective is to build a machine learning model that can accurately classify audio recordings into six distinct emotional categories: Anger, Disgust, Fear, Happiness, Neutral, and Sadness. 
 
-The CREMA-D dataset stands for "Crowd Sourced Emotional Multimodal Actors Dataset". This dataset contains 7,442 original clips from 9 actors, of which 48 are male and 43 are female between the ages of 20-74. The ethnicities included are African-American, Asian, Caucasion, Hispanic, and Unspecified. The actors spoke up to 12 sentences using one of 6 emotions (anger, disgust, fear, happiness, neutrality, sadness) with 4 different levels of emotional intensity (low, medium, high, unspecified). 
+The CREMA-D dataset stands for "Crowd Sourced Emotional Multimodal Actors Dataset". This dataset contains 7,442 original clips from 9 actors, of which 48 are male and 43 are female between the ages of 20-74. The ethnicities included are African-American, Asian, Caucasian, Hispanic, and Unspecified. The actors spoke up to 12 sentences using one of 6 emotions (anger, disgust, fear, happiness, neutrality, sadness) with 4 different levels of emotional intensity (low, medium, high, unspecified). 
 - The dataset is compiled from __[CREMA-D Audio Emotion](https://www.kaggle.com/code/ejlok1/audio-emotion-part-1-explore-data/input)__.
 
-While there are several metrics by which to measure a CNN's performance (such as accuracy, precision, recall, F1, etc), this model uses accuracy as a measure of the overall correctness of the model'spredictions. Accuracy calcuates the ratio of correctly classified audio samples to the total number of samples and is appropriate because the six classes are balanced. Because this multi-class classification CNN has six target outputs, the baseline accuracy per class would be ~17%. The model will be considered successful if its accuracy on both the testing and training sets exceed 95%.
+While there are several metrics by which to measure a CNN's performance (such as accuracy, precision, recall, F1, etc), this model uses accuracy as a measure of the overall correctness of the model's predictions. Accuracy calculates the ratio of correctly classified audio samples to the total number of samples and is appropriate because the six classes are balanced. Because this multi-class classification CNN has six target outputs, the baseline accuracy per class would be ~17%. There are no universally fixed industry standards for success within CNN models, as this judgement varies by domain, task type, data complexity, and real-world performance limitations. For this project, the modelz will be considered successful if its accuracy on both the testing and validation sets exceed 90%.
 
 
 # [Target Audience](#section-title)
 
-This project targets a broad audience which includes researchers within the field of affective computing, machine learning, and artificial intelligence who are interested in advancing the state of speech emotion recognition and its contributions to academic research. The audience also includes developers of emotion-enabled applications, market reseaarchers and advertisers, and content creators and media propducers. 
+This project targets a broad audience which includes researchers within the field of affective computing, machine learning, and artificial intelligence who are interested in advancing the state of speech emotion recognition and its contributions to academic research. The audience also includes developers of emotion-enabled applications, market researchers and advertisers, and content creators and media producers. 
 
 # [Research Approach](#section-title)
 
 The flow chart below shows the preprocessing and machine learning techniques used to create this multiclass CNN. 
 
-<img src="/Users/catherinesanso/Desktop/Github_Personal/speech-emotion-recognition/graphics/model_workflow.png" alt="Alt text" width="800" height="400">
+<img src="graphics/model_workflow.png" alt="Alt text" width="800" height="400">
 
 # [Data Dictionary](#section-title)
 
-The following terms and abbreviatons are used throughout this project and are defined as follows:
+The following terms and abbreviations are used throughout this project and are defined as follows:
 
 | Item | Description
 | --- | --- 
@@ -82,7 +82,7 @@ The following terms and abbreviatons are used throughout this project and are de
 | **WSI** | *CREMA-D Sentence: We'll stop in a couple of minutes*
 | **sample_rate** | *Number of samples taken per second*
 | **rms** | *Root Mean Squared Value*
-| **scv** | *Spectal Centroid Value*
+| **scv** | *Spectral Centroid Value*
 | **sbv** | *Spectral Bandwidth Value*
 | **sfv** | *Spectral Flatness Value*
 | **srv** | *Spectral Rolloff Value*
@@ -91,7 +91,13 @@ The following terms and abbreviatons are used throughout this project and are de
 
 # [Discussion & Recommendations](#section-title)
 
-The first CNN model and the VGG16 model were both deemed successful in outperforming the baseline accuracy of ~17%.
+The self-created CNN model and the VGG16 model both outperformed the baseline accuracy of ~17%. Because success was defined as a model exceeding 90% accuracy on the validation set, only the VGG16 model is considered successful. With 99% accuracy on the training set and 93% accuracy on the validaton set, the model shows overfitting which can be corrected by introducing more samples, sourcing more diverse audio, and creating further data augmentation to generalize the model.
+
+The final CNN and VGG16 model sourced over 35,000 spectogram images from 7,447 audio files. However, the accuracy of the model did not improve significantly from previous iteratons of the model in which only ~9,000 images were inputted. This suggests that improvement is more easily achievable by sourcing more diverse audio snippets, rather than merely increasing the sample size.
+
+The model was run with 10, 15, and 25 epochs and learning rates of 0.001 and 0.0001. In all instances, early stoppage was considered but the models always ran through all n iterations. While the models with 25 epochs produced the best results, the models with 15 epochs produced a similar (though slihlty less) accuracy metric and should be considered if the user has time constraints or computer hardware limitations. 
+
+It is recommended that future iterations of this project include audio data from the RAVDESS, SAVEE, and TESS datasets which include different actors portraying a range of emotions. A limitation within this project is that all speech was spoken in a "netrual" North American accent, so sound data with regional dialects or accents should also be explored. Furher data augmentation can also enhance the model's performance by introducing more generalization. Audio-specific CNNs like YAMNet, VGGish, UrbanSound8k, and ESC-10 shoudl be explored. Lastly, ensemble learning can be used to combine the best-performing CNN model with other unsupervised learning techniques (such as K-Means Clustering produced by feature extraction of the dataframe) to further improve the model's performance metrics.
 
 # [Software Required](#section-title)
 The software required for this project are listed on the first line of code within each notebook and include: Pandas, Matplotlib, Seaborn, Librosa, IPython, and Scipy.
