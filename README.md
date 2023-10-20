@@ -14,7 +14,7 @@ September 20, 2023 <br>
 1. [Discussion & Recommendations](#section-title)
 1. [Software Required](#section-title)
 1. [Sources](#section-title)
-1. [Licensing](#section-title)
+1. [Licensing](#section-title) 
  
 # [Background](#section-title)
 Speech emotion recognition (SER) is the process of predicting human emotions from audio signals using artificial intelligence (AI) and machine learning (ML) techniques. Human speech contains several features that a listener interprets to unpack the information transmitted by the speaker, such as tone, pitch, speed, and other acoustic properties. 
