@@ -12,7 +12,7 @@ September 20, 2023 <br>
 1. [Research Approach](#section-title)
 1. [Data Dictionary](#section-title)
 1. [Discussion & Recommendations](#section-title)
-1. [Software Required](#section-title)
+1. [Software Required](#section-title) 
 1. [Sources](#section-title)
 1. [Licensing](#section-title) 
  
