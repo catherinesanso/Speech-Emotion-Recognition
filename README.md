@@ -9,7 +9,7 @@ September 20, 2023 <br>
 1. [Background](#section-title)
 1. [Problem Statement](#section-title) 
 1. [Target Audience](#section-title)
-1. [Research Approach](#section-title)
+1. [Research Approach](#section-title) 
 1. [Data Dictionary](#section-title)
 1. [Discussion & Recommendations](#section-title)
 1. [Software Required](#section-title) 
